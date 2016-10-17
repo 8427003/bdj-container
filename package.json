@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.jdb-dev.com:rrcfe/manualMakeUp.git"
+    "url": "https://github.com/8427003/bdj-container.git"
   },
   "keywords": [
-    "nodemon app.js"
+    "bdj-container"
   ],
-  "author": "wujt@jiedaibao.com",
+  "author": "8427003@qq.com",
   "license": "ISC",
   "dependencies": {
     "async": "^2.0.1",
