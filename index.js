@@ -17,13 +17,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session.check(), session.init());
+app.use(require('express-ejs-layouts'));
+app.set('layout', 'page/layouts/default');
 
 /**
  * 转给 Roter 处理路由
  */
-require('node-jsx').install({
-    extension: '.jsx'
-});
 
 var appPath,
     publicPath,
