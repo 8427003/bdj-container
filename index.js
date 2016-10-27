@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use(session.check(), session.init());
 app.use(require('express-ejs-layouts'));
 app.set('layout', 'page/layouts/default');
+app.use(require('express-fileupload')());
 
 /**
  * 转给 Roter 处理路由
