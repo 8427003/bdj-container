@@ -5,14 +5,13 @@ var compression = require('compression');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('./lib/session.lib');
-var logger = require('./lib/logger.lib');
-var enrouten = require('express-enrouten');
+var logger = require('./lib/logger.js');
 var load = require('express-load');
+var winston = require('winston');
 var app = express();
 
 app.use(compression());
-app.use(logger.access());
+app.use(logger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -52,7 +51,6 @@ module.exports = {
 
         app.set('views', viewsPath);
         app.use(express.static(publicPath));
-        //app.use(enrouten({ directory: controllerPath }));
 
         //注册ejs模板为html页。简单的讲，就是原来以.ejs为后缀的模板页，现在的后缀名可以//是.html了
         app.engine('.html', require('ejs').__express);
