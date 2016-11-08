@@ -22,6 +22,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.enable('trust proxy');
+
 
 /**
  * 转给 Roter 处理路由

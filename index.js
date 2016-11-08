@@ -15,6 +15,7 @@ app.use(logger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.enable('trust proxy');
 app.use(require('express-ejs-layouts'));
 app.set('layout', 'page/layouts/default');
 app.use(require('express-fileupload')());
