@@ -30,7 +30,7 @@ var appPath,
 function loadRouter(){
     var router = express.Router();
     try{
-        load('waidan.js', {cwd: appPath})
+        load('route.js', {cwd: appPath})
             .into(router);
     }
     catch (err) {
