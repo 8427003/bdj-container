@@ -44,7 +44,7 @@ module.exports = {
     createApp: function (config) {
         /** * 设置模板解析
          */
-        appPath = config.appPath || path.join(__dirname, '/app');
+        global.APP_PATH = appPath = config.appPath || path.join(__dirname, '/app');
         publicPath = config.publicPath || path.join(__dirname, '/public');
         viewsPath = config.viewsPath || path.join(appPath, '/views');
 
