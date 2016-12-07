@@ -17,7 +17,6 @@ app.use(cookieParser());
 app.enable('trust proxy');
 app.use(require('express-ejs-layouts'));
 app.set('layout', 'layouts/default');
-app.use(require('express-fileupload')());
 
 /**
  * 转给 Roter 处理路由
