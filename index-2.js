@@ -1,5 +1,4 @@
 var path = require('path');
-var argv = require('yargs').argv;
 var express = require('express');
 var compression = require('compression');
 var cookieParser = require('cookie-parser');
@@ -10,7 +9,6 @@ var winston = require('winston');
 var app = express();
 
 app.use(compression());
-app.use(logger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -46,7 +44,7 @@ module.exports = {
         global.APP_PATH = appPath = config.appPath || path.join(__dirname, '/app');
         publicPath = config.publicPath || path.join(__dirname, '/public');
         viewsPath = config.viewsPath || path.join(appPath, '/views');
-
+        app.use(logger.config(config.logPath));
         app.set('views', viewsPath);
         app.use(express.static(publicPath));
 
@@ -60,7 +58,7 @@ module.exports = {
         /**
          * 中间件
          */
-        app.set('port', 8080);
+        app.set('port', config.port || 80);
 
         loadRouter();
 
