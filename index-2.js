@@ -44,7 +44,7 @@ module.exports = {
         global.APP_PATH = appPath = config.appPath || path.join(__dirname, '/app');
         publicPath = config.publicPath || path.join(__dirname, '/public');
         viewsPath = config.viewsPath || path.join(appPath, '/views');
-        app.use(logger.config(config.logPath));
+        app.use(logger);
         app.set('views', viewsPath);
         app.use(express.static(publicPath));
 
